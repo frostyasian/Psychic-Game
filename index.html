@@ -4,80 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Psychic Game</title>
   </head>
   <body>
-    <h1>Psychic Game</h1>
-
-    <p id="directions-text">Guess the letter the computer is thinking.</p>
-    <p id="userchoice-text"></p>
-    <p id="computerchoice-text"></p>
-    <p id="wins-text"></p>
-    <p id="losses-text"></p>
-    <p id="ties-text"></p>
-
-    <script>
-      type = "text/javascript";
-      src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js";
-    </script>
-    <script>
-      var computerChoices = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z"
-      ];
-
-      var win = 0;
-      var losses = 0;
-      var guessesLeft = 0;
-
-      var directionsText = document.getElementById("directions-text");
-      var userChoiceText = document.getElementById("userchoice-text");
-      var computerChoiceText = document.getElementById("computerchoice-text");
-      var winsText = document.getElementById("wins-text");
-      var lossesText = document.getElementById("losses-text");
-      var tiesText = document.getElementById("ties-text");
-
-      document.onkeyup = function(event) {
-        var userGuess = event.key;
-        var computerGuess =
-          computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        //if and else statements for the win/losses/guesses
-        if (userGuess === computerGuess) {
-          wins++;
-        } else {
-          losses++;
-        }
-        directionsText.textContent = "";
-        userChoiceText.textContent = "You chose: " + userGuess;
-        computerChoiceText.textContent = "The computer chose: " + computerGuess;
-        winsText.textContent = "wins: " + wins;
-        lossesText.textContent = "losses: " + losses;
-        tiesText.textContent = "ties: " + ties;
-      };
-    </script>
+    <div class="container">
+      <header>
+        <h1>Psychic Game</h1>
+        <br />
+        <h3>
+          Try to guess which letter "character" is thinking of. You get 10
+          guesses.
+        </h3>
+      </header>
+      <div class="underscore">_ _ _ _</div>
+      <div class="rightGuess">Right Guess</div>
+      <div class="wrongGuess">Wrong Guess</div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
   </body>
 </html>
