@@ -1,2 +1,2 @@
 # Psychic-Game
-https://frotyasian.github.io/Psychic-Game/index.html
+https://frostyasian.github.io/Psychic-Game/index.html
