@@ -71,7 +71,8 @@ updateGuessesLeft();
 
 //user guess
 document.onkeyup = function(event) {
-  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+  console.log(event.key);
+  var userGuess = event.key.toLowerCase();
   var check = computerChoices.includes(userGuess);
 
   if (check === false) {
@@ -84,7 +85,7 @@ document.onkeyup = function(event) {
     updateGuessesSoFar();
 
     if (guessesLeft > 0) {
-      if (userGuess === letterToGuess) {
+      if (userGuess === computerGuess) {
         wins++;
         document.querySelector("#wins").innerHTML = "Wins: " + wins;
         userGuess = userGuess.toUpperCase();
